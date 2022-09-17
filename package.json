@@ -1,0 +1,26 @@
+{
+  "name": "vite-typescript-starter",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:all": "vite --host=0.0.0.0 --port=8007 --cors --strictPort",
+    "vite": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "preview:all": "vite preview --host=0.0.0.0 --port=8006 --strictPort"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "author": {
+    "name" : "Tiago França",
+    "email" : "dev@tiagofranca.com",
+    "url" : "https://tiagofranca.com/"
+  }
+}
