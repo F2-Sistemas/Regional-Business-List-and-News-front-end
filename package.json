@@ -1,17 +1,26 @@
 {
-  "name": "vite-typescript-starter",
+  "name": "vite-preact-ts-starter",
   "private": true,
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "dev:all": "vite --host=0.0.0.0 --port=8007 --cors --strictPort",
+    "dev": "vite --host=0.0.0.0 --port=8007 --cors --strictPort",
+    "dev:local": "vite",
     "vite": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "preview:all": "vite preview --host=0.0.0.0 --port=8006 --strictPort"
+    "preview": "vite preview --host=0.0.0.0 --port=8006 --strictPort",
+    "preview:local": "vite preview",
+    "build:gh": "GITHUB_PAGES=Regional-Business-List-and-News-front-end preact build && dot-json ./build/manifest.json start_url \"/Regional-Business-List-and-News-front-end/\""
+  },
+  "dependencies": {
+    "preact": "^10.11.0",
+    "@babel/core": ">=7.12.10 <8.0.0",
+    "@preact/preset-vite": "^2.4.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0"
   },
   "devDependencies": {
+    "dot-json": "^1.2.2",
     "typescript": "^4.6.4",
     "vite": "^3.1.0"
   },
@@ -19,8 +28,8 @@
     "node": ">=16"
   },
   "author": {
-    "name" : "Tiago França",
-    "email" : "dev@tiagofranca.com",
-    "url" : "https://tiagofranca.com/"
+    "name": "Tiago França",
+    "email": "dev@tiagofranca.com",
+    "url": "https://tiagofranca.com/"
   }
 }
