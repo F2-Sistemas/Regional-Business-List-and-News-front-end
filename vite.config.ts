@@ -15,7 +15,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 
     config['define'] = {
         __APP_ENV__: _envString(env.APP_ENV),
-        GITHUB_PAGES: _envString(env.GITHUB_PAGES),
+        REPO_NAME_GITHUB_PAGES: _envString(env.REPO_NAME_GITHUB_PAGES),
         __mode: _envString(mode),
         __timed: _envString(timed()),
     }
@@ -27,7 +27,19 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
         })
     ];
 
-    config['publicDir'] = _envString(env.GITHUB_PAGES);
+    config['publicDir'] = 'aaaaa'//_envString(env.REPO_NAME_GITHUB_PAGES); //NOCOMMIT
+
+    config['build'] = {
+        outDir: 'build',// _envString(env.BUILDED_DIR);
+    }
+
+    /**
+     * (!) "base" option SHOULD start with a slash.
+     * (!) "base" option SHOULD end with a slash.
+     * @todo validate if base starts and ends with slash '/'
+     * _envString(env.REPO_NAME_GITHUB_PAGES)
+     */
+    config['base'] = env.REPO_NAME_GITHUB_PAGES_BASE_DIR;
 
     if (command === 'serve') {
         // dev specific config

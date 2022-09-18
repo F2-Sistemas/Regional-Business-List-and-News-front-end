@@ -14,7 +14,8 @@
     "preact:build:no-prerender": "preact build --no-prerender",
     "preview": "vite preview --host=0.0.0.0 --port=8006 --strictPort",
     "preview:local": "vite preview",
-    "build:gh": "tsc && GITHUB_PAGES=Regional-Business-List-and-News-front-end vite build --outDir=./build && dot-json ./build/manifest.json start_url \"/Regional-Business-List-and-News-front-end/\"",
+    "build:gh": "tsc && REPO_NAME_GITHUB_PAGES=Regional-Business-List-and-News-front-end vite build && dot-json ./build/manifest.json start_url \"/Regional-Business-List-and-News-front-end/\"",
+    "build:gh:old": "tsc && REPO_NAME_GITHUB_PAGES=Regional-Business-List-and-News-front-end vite build --outDir=./build && dot-json ./build/manifest.json start_url \"/Regional-Business-List-and-News-front-end/\"",
     "start": "per-env",
     "lint": "eslint src",
     "test": "jest"
