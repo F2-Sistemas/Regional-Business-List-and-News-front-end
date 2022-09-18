@@ -34,10 +34,10 @@ jobs:
         github_token: ${{ secrets.ACTIONS_PERSONAL_TOKEN }}
         publish_dir: ./build
         keep_files: true
-        publish_branch: wip/gh-pages  # default: gh-pages
+        publish_branch: gh-pages  # default: gh-pages
         # deploy_key: ${{ secrets.ACTIONS_PERSONAL_TOKEN }}
         # external_repository: username/external-repository
       env:
         ACTIONS_PERSONAL_TOKEN: ${{ secrets.ACTIONS_PERSONAL_TOKEN }}
-        PUBLISH_BRANCH: wip/gh-pages
+        PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: ./build
