@@ -8,25 +8,41 @@
     "dev:local": "vite",
     "vite": "vite",
     "build": "tsc && vite build",
+    "preact": "preact",
+    "preact:build": "preact build",
+    "preact:build:prerender": "preact build --no-prerender",
+    "preact:build:no-prerender": "preact build --no-prerender",
     "preview": "vite preview --host=0.0.0.0 --port=8006 --strictPort",
     "preview:local": "vite preview",
-    "build:gh": "GITHUB_PAGES=Regional-Business-List-and-News-front-end preact build && dot-json ./build/manifest.json start_url \"/Regional-Business-List-and-News-front-end/\""
+    "build:gh": "tsc && GITHUB_PAGES=Regional-Business-List-and-News-front-end vite build --outDir=./build && dot-json ./build/manifest.json start_url \"/Regional-Business-List-and-News-front-end/\"",
+    "start": "per-env",
+    "lint": "eslint src",
+    "test": "jest"
   },
   "dependencies": {
-    "preact": "^10.11.0",
-    "@babel/core": ">=7.12.10 <8.0.0",
+    "@babel/core": "^7.19.1",
     "@preact/preset-vite": "^2.4.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.1.0"
+    "dotenv": "^16.0.2",
+    "preact": "^10.11.0",
+    "preact-render-to-string": "^5.2.4",
+    "preact-router": "^4.1.0",
+    "typescript": "^4.8.3",
+    "vite": "^3.1.2"
   },
   "devDependencies": {
     "dot-json": "^1.2.2",
-    "typescript": "^4.6.4",
-    "vite": "^3.1.0"
+    "eslint": "^8.23.1",
+    "jest": "^29.0.3",
+    "per-env": "^1.0.2",
+    "typescript": "^4.6.4"
   },
   "engines": {
     "node": ">=16"
   },
+  "eslintIgnore": [
+    "build/*",
+    "dist/*"
+  ],
   "author": {
     "name": "Tiago França",
     "email": "dev@tiagofranca.com",
