@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@babel/core': ^7.19.1
+  '@preact/prerender-data-provider': ^3.0.1
   '@preact/preset-vite': ^2.4.0
   dot-json: ^1.2.2
   dotenv: ^16.0.2
@@ -25,6 +26,7 @@ dependencies:
   vite: 3.1.2
 
 devDependencies:
+  '@preact/prerender-data-provider': 3.0.1_preact@10.11.0
   dot-json: 1.2.2
   eslint: 8.23.1
   jest: 29.0.3
@@ -709,6 +711,14 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: true
+
+  /@preact/prerender-data-provider/3.0.1_preact@10.11.0:
+    resolution: {integrity: sha512-Jox3VU2k4S/J0QL+tdRdnvZ7Cv/41cfWPWd7Xj8ZKqNZK85R7/UbsKIyvJHYI+YfBdR9MrDES+kjzzClkS8pHA==}
+    peerDependencies:
+      preact: ^10.0.0
+    dependencies:
+      preact: 10.11.0
     dev: true
 
   /@preact/preset-vite/2.4.0_52p7fdwmbrzwp5jucrddowmnla:
@@ -2706,7 +2716,6 @@ packages:
 
   /preact/10.11.0:
     resolution: {integrity: sha512-Fk6+vB2kb6mSJfDgODq0YDhMfl0HNtK5+Uc9QqECO4nlyPAQwCI+BKyWO//idA7ikV7o+0Fm6LQmNuQi1wXI1w==}
-    dev: false
 
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
