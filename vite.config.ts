@@ -27,6 +27,8 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
         })
     ];
 
+    config['publicDir'] = _envString(env.GITHUB_PAGES);
+
     if (command === 'serve') {
         // dev specific config
         // config['key'] = 'value'
