@@ -31,9 +31,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install dependencies on system
-        run: bash ./scripts/install-dependencies.sh
-
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
@@ -58,6 +55,9 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies on system
+        run: bash ./scripts/install-dependencies.sh
 
       - name: Install dependencies
         run: pnpm install
