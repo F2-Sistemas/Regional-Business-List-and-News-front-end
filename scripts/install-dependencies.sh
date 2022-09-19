@@ -20,8 +20,11 @@ fi
 ## pnpm global install
 which pnpm >/dev/null 2>&1;
 
-if [ $? -ne 0 ]; then
+if [ $? -ne 0 ];
+    then
     npm install -g pnpm
+    else
+    pnpm setup
 fi
 
 ## dot-json global install
