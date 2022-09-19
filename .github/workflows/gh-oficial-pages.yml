@@ -31,6 +31,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Show ENV
+        run: |
+          echo "APP_NAME: ${{ secrets.APP_NAME }}"
+          echo "VITE_APP_ID: ${{ secrets.VITE_APP_ID }}"
+          echo "VITE_APP_NAME: ${{ secrets.VITE_APP_NAME }}"
+          echo "REPO_NAME_GITHUB_PAGES: ${{ secrets.REPO_NAME_GITHUB_PAGES }}"
+          echo "REPO_NAME_GITHUB_PAGES_BASE_DIR: ${{ secrets.REPO_NAME_GITHUB_PAGES_BASE_DIR }}"
+          echo "VITE_A1: ${{ secrets.VITE_A1 }}"
+          echo "VITE_B2: ${{ secrets.VITE_B2 }}"
+
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
@@ -65,7 +75,7 @@ jobs:
       - name: Run build:gh
         run: pnpm run build:gh
 
-      - name: Show ENV
+      - name: Run ENV
         run: env
 
       - name: Setup Pages
