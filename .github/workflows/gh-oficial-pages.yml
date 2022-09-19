@@ -31,6 +31,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Install dependencies on system
+        run: bash ./scripts/install-dependencies.sh
+
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
@@ -61,6 +64,9 @@ jobs:
 
       - name: Run build:gh
         run: pnpm run build:gh
+
+      - name: Show ENV
+        run: env
 
       - name: Setup Pages
         uses: actions/configure-pages@v2

@@ -27,27 +27,36 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
         })
     ];
 
-    config['publicDir'] = 'aaaaa'//_envString(env.REPO_NAME_GITHUB_PAGES); //NOCOMMIT
-
-    config['build'] = {
-        outDir: 'build',// _envString(env.BUILDED_DIR);
-    }
-
-    /**
-     * (!) "base" option SHOULD start with a slash.
-     * (!) "base" option SHOULD end with a slash.
-     * @todo validate if base starts and ends with slash '/'
-     * _envString(env.REPO_NAME_GITHUB_PAGES)
-     */
-    config['base'] = env.REPO_NAME_GITHUB_PAGES_BASE_DIR;
-
     if (command === 'serve') {
         // dev specific config
         // config['key'] = 'value'
-    } else {
+    }
+
+    if (command === 'build') {
         // command === 'build'
         // build specific config
         // config['key'] = 'value'
+
+        config['build'] = {
+            outDir: 'build',// _envString(env.BUILDED_DIR);
+        }
+
+        /**
+        * (!) "base" option SHOULD start with a slash.
+        * (!) "base" option SHOULD end with a slash.
+        * @todo validate if base starts and ends with slash '/'
+        * Use 'mode' param to decides
+        * _envString(env.REPO_NAME_GITHUB_PAGES)
+        */
+        let basename = '/';
+
+        if (mode != 'development') {
+            basename = env.REPO_NAME_GITHUB_PAGES_BASE_DIR ? env.REPO_NAME_GITHUB_PAGES_BASE_DIR : '/';
+        }
+
+        config.define['__basename'] = _envString(basename);
+
+        config['base'] = basename;
     }
 
     return config
