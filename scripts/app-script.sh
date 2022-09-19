@@ -2,25 +2,26 @@
 
 increment_version()
 {
-    APP_INFO_FILE="public/plain/info.json"
+    local SEMVER="${2:-p}"
+    local APP_INFO_FILE="public/plain/info.json"
 
     if [ ! -f ${APP_INFO_FILE} ]; then
         exit 13
     fi
 
-    PREVIOUS_APP_VERSION=$(cat "${APP_INFO_FILE}" |jq '.app_info.version')
+    local PREVIOUS_APP_VERSION=$(cat "${APP_INFO_FILE}" |jq '.app_info.version')
 
     ## remove quotation marks
-    PREVIOUS_APP_VERSION=${PREVIOUS_APP_VERSION//\"/}
+    local PREVIOUS_APP_VERSION=${PREVIOUS_APP_VERSION//\"/}
 
-    NEW_APP_VERSION=$(bash ./scripts/increment_version/increment_version.sh -p ${PREVIOUS_APP_VERSION})
+    local NEW_APP_VERSION=$(bash ./scripts/increment_version/increment_version.sh -${SEMVER} ${PREVIOUS_APP_VERSION})
 
     echo "New app_version: ${NEW_APP_VERSION}"
     echo "Previous app_version: ${PREVIOUS_APP_VERSION}"
 
     dot-json "${APP_INFO_FILE}" "app_info.version" "${NEW_APP_VERSION}" --indent=auto
 
-    UPDATED_APP_VERSION=$(cat "${APP_INFO_FILE}" |jq '.app_info.version')
+    local UPDATED_APP_VERSION=$(cat "${APP_INFO_FILE}" |jq '.app_info.version')
 
     [ "${PREVIOUS_APP_VERSION}" = "${UPDATED_APP_VERSION}" ] && exit 9 || exit 0
 }
@@ -88,7 +89,8 @@ get_date()
 
 increment_version_and_commit()
 {
-    local OUTPUT="$(bash ./scripts/app-script.sh increment_version)"
+    local SEMVER="${2:-p}"
+    local OUTPUT="$(bash ./scripts/app-script.sh increment_version ${SEMVER})"
 
     if [ -f "./public/plain/info.json" ]; then
         if [ $? -eq 0 ]; then
@@ -116,7 +118,7 @@ do
         php ./scripts/php_scripts/args.php -a="${AVAILABLE_FUNCTIONS}" -t="${functionName}" -s="${SEPRARATOR}" >/dev/null 2>&1;
 
         if [ $? -eq 0 ]; then
-            ${functionName}
+            ${functionName} $@
         fi
     fi
 
