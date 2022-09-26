@@ -40,8 +40,8 @@ export function App() {
                     getComponent={() => import('./routes/profile').then(module => module.default)}
                 />
                 <AsyncRoute path="/profile/:user" getComponent={getProfile}
-                    // loading={()=>{return <Loading/>}} // Works
-                    loading={() => <div>loading...</div>}
+                    loading={()=>{return <Loading/>}} // Works
+                    // loading={() => <div>loading...</div>}
                 />
                 <AsyncRoute
                     path="/friends/:id"

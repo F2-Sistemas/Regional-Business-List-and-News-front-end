@@ -3,7 +3,7 @@ import { useState, useEffect } from 'preact/hooks';
 import './style.css';
 
 // Note: `user` comes from the URL, courtesy of our router
-export default function ({user, path} : {
+export default function ({ user, path }: {
     user: string
     path: string
 }) {
@@ -17,6 +17,14 @@ export default function ({user, path} : {
             clearInterval(timer);
         }
     }, []);
+
+    useEffect(() => {
+        console.log('<App> was just rendered for the first time')
+    }, [])
+
+    useEffect(() => {
+        console.log('count value was changed to: ', count)
+    }, [count])
 
     return (
         <>
