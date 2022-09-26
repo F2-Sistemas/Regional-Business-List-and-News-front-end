@@ -11,6 +11,7 @@ specifiers:
   eslint: ^8.23.1
   jest: ^29.0.3
   per-env: ^1.0.2
+  pnpm: ^7.12.2
   preact: ^10.11.0
   preact-async-route: ^2.2.1
   preact-render-to-string: ^5.2.4
@@ -24,6 +25,7 @@ dependencies:
   '@preact/preset-vite': 2.4.0_52p7fdwmbrzwp5jucrddowmnla
   bootstrap: 5.2.1_@popperjs+core@2.11.6
   dotenv: 16.0.2
+  pnpm: 7.12.2
   preact: 10.11.0
   preact-render-to-string: 5.2.4_preact@10.11.0
   preact-router: 4.1.0_preact@10.11.0
@@ -2705,6 +2707,12 @@ packages:
     dependencies:
       find-up: 4.1.0
     dev: true
+
+  /pnpm/7.12.2:
+    resolution: {integrity: sha512-8QvnKANKN+YZXDmVYGI7zRJysdKldZI+w3AYnxu9IwtnLv1x6WuzrJr0nxMcTeuUAT908RjDqK+/6KJB9wNqxA==}
+    engines: {node: '>=14.6'}
+    hasBin: true
+    dev: false
 
   /postcss/8.4.16:
     resolution: {integrity: sha512-ipHE1XBvKzm5xI7hiHCZJCSugxvsdq2mPnsq5+UF+VHCjiBvtDrlxJfMBToWaP9D5XlgNmcFGqoHmUn0EYEaRQ==}
