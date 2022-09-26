@@ -20,6 +20,10 @@ const getProfile = function (url: any, cb: any, props: any) {
     return import('./routes/profile').then(module => module.default);
 }
 
+const getUserData = function (url: any, cb: any, props: any) {
+    return import('./routes/user').then(module => module.default);
+}
+
 export function App() {
     const [count, setCount] = useState(0)
     const appRouteInfo = {
@@ -40,6 +44,10 @@ export function App() {
                     getComponent={() => import('./routes/profile').then(module => module.default)}
                 />
                 <AsyncRoute path="/profile/:user" getComponent={getProfile}
+                    loading={()=>{return <Loading/>}} // Works
+                    // loading={() => <div>loading...</div>}
+                />
+                <AsyncRoute path="/user/:userId" getComponent={getUserData}
                     loading={()=>{return <Loading/>}} // Works
                     // loading={() => <div>loading...</div>}
                 />
