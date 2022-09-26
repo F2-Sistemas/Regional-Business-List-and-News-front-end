@@ -2,14 +2,17 @@ lockfileVersion: 5.4
 
 specifiers:
   '@babel/core': ^7.19.1
+  '@popperjs/core': ^2.11.6
   '@preact/prerender-data-provider': ^3.0.1
   '@preact/preset-vite': ^2.4.0
+  bootstrap: 5.2.1
   dot-json: ^1.2.2
   dotenv: ^16.0.2
   eslint: ^8.23.1
   jest: ^29.0.3
   per-env: ^1.0.2
   preact: ^10.11.0
+  preact-async-route: ^2.2.1
   preact-render-to-string: ^5.2.4
   preact-router: ^4.1.0
   typescript: ^4.8.3
@@ -17,7 +20,9 @@ specifiers:
 
 dependencies:
   '@babel/core': 7.19.1
+  '@popperjs/core': 2.11.6
   '@preact/preset-vite': 2.4.0_52p7fdwmbrzwp5jucrddowmnla
+  bootstrap: 5.2.1_@popperjs+core@2.11.6
   dotenv: 16.0.2
   preact: 10.11.0
   preact-render-to-string: 5.2.4_preact@10.11.0
@@ -31,6 +36,7 @@ devDependencies:
   eslint: 8.23.1
   jest: 29.0.3
   per-env: 1.0.2
+  preact-async-route: 2.2.1
 
 packages:
 
@@ -713,6 +719,10 @@ packages:
       fastq: 1.13.0
     dev: true
 
+  /@popperjs/core/2.11.6:
+    resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
+    dev: false
+
   /@preact/prerender-data-provider/3.0.1_preact@10.11.0:
     resolution: {integrity: sha512-Jox3VU2k4S/J0QL+tdRdnvZ7Cv/41cfWPWd7Xj8ZKqNZK85R7/UbsKIyvJHYI+YfBdR9MrDES+kjzzClkS8pHA==}
     peerDependencies:
@@ -1031,6 +1041,14 @@ packages:
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
+
+  /bootstrap/5.2.1_@popperjs+core@2.11.6:
+    resolution: {integrity: sha512-UQi3v2NpVPEi1n35dmRRzBJFlgvWHYwyem6yHhuT6afYF+sziEt46McRbT//kVXZ7b1YUYEVGdXEH74Nx3xzGA==}
+    peerDependencies:
+      '@popperjs/core': ^2.11.6
+    dependencies:
+      '@popperjs/core': 2.11.6
+    dev: false
 
   /brace-expansion/1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -2696,6 +2714,10 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
     dev: false
+
+  /preact-async-route/2.2.1:
+    resolution: {integrity: sha512-8bg1007akXs3YDmzYT4McaTe6ji2FIzcc0/NTlu+vjJaKPNQ8lNG/HQ6LP+FoIxQ4m/KH5vvJCHJN5ADp2iNGA==}
+    dev: true
 
   /preact-render-to-string/5.2.4_preact@10.11.0:
     resolution: {integrity: sha512-iIPHb3BXUQ3Za6KNhkjN/waq11Oh+QWWtAgN3id3LrL+cszH3DYh8TxJPNQ6Aogsbu4JsqdJLBZltwPFpG6N6w==}

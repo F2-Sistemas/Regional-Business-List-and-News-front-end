@@ -30,3 +30,5 @@ build
 _dev_dir
 .env
 .env.bkp*
+*.bkp
+*-bkp*

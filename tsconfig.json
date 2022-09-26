@@ -14,6 +14,7 @@
     "allowJs": false,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
+    "noImplicitAny": false,
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
   },
